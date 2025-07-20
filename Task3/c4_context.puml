@@ -1,0 +1,15 @@
+@startuml PropDevelopment_Context
+title PropDevelopment Context Diagram
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Context.puml
+
+Person(user, "Собственник", "Клиент")
+
+System(PropDevelopmentSystem, "PropDevelopment System", "Строительная компания.\n\nУправляет ролями пользователей для доступа к партнерскому API умного дома")
+
+System_Ext(api, "Smart House API", "API партнера для управления умным домофоном и шлагбаумом.\nДает возможность добавить биометрические данные, номер автомобиля для доступа, а также доступ к видео- и аудио-потоку из домофона.")
+
+Rel(user, PropDevelopmentSystem, "Пользуется умным домофоном и шлагбаумом")
+Rel_R(PropDevelopmentSystem, api, "Использует API для управления домофонами и шлагбаумами")
+
+@enduml
