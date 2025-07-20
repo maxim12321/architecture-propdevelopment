@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: secure-space
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: secure-operator
+  namespace: secure-space
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: devops
+  namespace: default
+
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: developer
+  namespace: default
